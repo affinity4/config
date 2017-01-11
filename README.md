@@ -1,5 +1,7 @@
 # Config
 
+[![Build Status](https://travis-ci.org/affinity4/config.svg?branch=master)](https://travis-ci.org/affinity4/config)
+
 Load config files from various formats to PHP arrays and easily retrieve deeply nested items
 
 ## Features
