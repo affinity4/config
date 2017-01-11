@@ -1,0 +1,19 @@
+{
+    "name": "affinity4/config",
+    "description": "Load config files from various formats to PHP arrays and easily retrieve deeply nested items",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Luke Watts",
+            "email": "luke@affinity4.ie"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Affinity4\\Config\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=5.6"
+    }
+}
