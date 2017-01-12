@@ -10,17 +10,15 @@
  */
 namespace Affinity4\Config\Loader;
 
-use Symfony\Component\Yaml\Yaml as SymfonyYaml;
-
 /**
- * Yaml Class
+ * Json Class
  *
  * @author Luke Watts <luke@affinity4.ie>
- * @since  1.0.0
+ * @since  1.1.0
  *
  * @package Affinity4\Config\Loader
  */
-class Yaml implements LoaderInterface
+class Json implements LoaderInterface 
 {
     /**
      * @var
@@ -33,10 +31,10 @@ class Yaml implements LoaderInterface
     private $parsed_content;
     
     /**
-     * Yaml Constructor
+     * Json Constructor
      *
      * @author Luke Watts <luke@affinity4.ie>
-     * @since  1.0.0
+     * @since  1.1.0
      *
      * @param string $file
      */
@@ -46,10 +44,10 @@ class Yaml implements LoaderInterface
     }
     
     /**
-     * Get raw Yaml content and convert to array using Symfony/Yaml
+     * Get raw JSON content and convert to array using json_decode
      *
      * @author Luke Watts <luke@affinity4.ie>
-     * @since  1.0.0
+     * @since  1.1.0
      *
      * @param $file_content
      */
@@ -57,14 +55,14 @@ class Yaml implements LoaderInterface
     {
         $this->file_content = $file_content;
         
-        $this->parsed_content = SymfonyYaml::parse($this->file_content);
+        $this->parsed_content = json_decode($this->file_content, true);
     }
     
     /**
-     * Return php array of parsed Yaml content
+     * Return php array of parsed JSON content
      *
      * @author Luke Watts <luke@affinity4.ie>
-     * @since  1.0.0
+     * @since  1.1.0
      *
      * @return array
      */

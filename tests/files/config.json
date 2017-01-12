@@ -1,0 +1,15 @@
+{
+    "env": "local",
+    "debug": true,
+    "db": {
+        "local": {
+            "name": "test",
+            "user": "root",
+            "pass": "root",
+            "host": "127.0.0.1",
+            "driver": "mysql_pdo",
+            "charset": "utf8",
+            "collate": "utf8_general_ci"
+        }
+    }
+}
