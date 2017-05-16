@@ -37,8 +37,6 @@ class Json implements LoaderInterface
      * @since  1.1.0
      *
      * @param string $file
-     *
-     * @return void
      */
     public function __construct($file)
     {
