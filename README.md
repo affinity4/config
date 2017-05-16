@@ -4,6 +4,8 @@
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/affinity4/config/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/affinity4/config/?branch=master)
 [![Code Coverage](https://scrutinizer-ci.com/g/affinity4/config/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/affinity4/config/?branch=master)
 
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/eeaec411-8edf-44f8-ad33-00c25384bc52/big.png)](https://insight.sensiolabs.com/projects/eeaec411-8edf-44f8-ad33-00c25384bc52)
+
 Load config files from various formats to PHP arrays and easily retrieve deeply nested items
 
 ## Features
