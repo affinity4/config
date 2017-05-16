@@ -15,8 +15,8 @@ use Symfony\Component\Yaml\Yaml as SymfonyYaml;
 /**
  * Yaml Class
  *
- * @author Luke Watts <luke@affinity4.ie>
- * @since  1.0.0
+ * @author  Luke Watts <luke@affinity4.ie>
+ * @since   1.0.0
  *
  * @package Affinity4\Config\Loader
  */
@@ -51,13 +51,13 @@ class Yaml implements LoaderInterface
      * @author Luke Watts <luke@affinity4.ie>
      * @since  1.0.0
      *
-     * @param $file_content
+     * @param $file_content string
      */
     public function input($file_content)
     {
         $this->file_content = $file_content;
         
-        $this->parsed_content = SymfonyYaml::parse($this->file_content);
+        $this->parsed_content = (array) SymfonyYaml::parse($this->file_content);
     }
     
     /**
@@ -70,6 +70,6 @@ class Yaml implements LoaderInterface
      */
     public function output()
     {
-        return $this->parsed_content;
+        return (array) $this->parsed_content;
     }
 }
