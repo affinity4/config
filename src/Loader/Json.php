@@ -37,6 +37,8 @@ class Json implements LoaderInterface
      * @since  1.1.0
      *
      * @param string $file
+     *
+     * @return void
      */
     public function __construct($file)
     {
@@ -49,7 +51,9 @@ class Json implements LoaderInterface
      * @author Luke Watts <luke@affinity4.ie>
      * @since  1.1.0
      *
-     * @param $file_content
+     * @param $file_content string
+     *
+     * @return void
      */
     public function input($file_content)
     {
@@ -68,6 +72,6 @@ class Json implements LoaderInterface
      */
     public function output()
     {
-        return $this->parsed_content;
+        return (array) $this->parsed_content;
     }
 }
