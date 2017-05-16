@@ -61,4 +61,11 @@ coding_style:
             constants:
                 true_false_null: lower
 
-build: true
+build:
+    tests:
+        override:
+            -
+                command: 'vendor/bin/phpunit --coverage-clover=some-file'
+                coverage:
+                    file: 'some-file'
+                    format: 'clover'
