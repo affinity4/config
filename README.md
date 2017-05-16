@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/affinity4/config.svg?branch=master)](https://travis-ci.org/affinity4/config) 
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/affinity4/config/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/affinity4/config/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/affinity4/config/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/affinity4/config/?branch=master)
 
 Load config files from various formats to PHP arrays and easily retrieve deeply nested items
 
