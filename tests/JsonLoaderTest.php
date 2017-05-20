@@ -16,12 +16,12 @@ use PHPUnit\Framework\TestCase;
 class JsonLoaderTest extends TestCase
 {
     private $json_loader;
-    
+
     public function setUp()
     {
         $this->json_loader = new Json(__DIR__ . '/files/config.json');
     }
-    
+
     public function testOutput()
     {
         $expected = [
@@ -39,7 +39,7 @@ class JsonLoaderTest extends TestCase
                 ]
             ]
         ];
-        
+
         $this->assertInternalType('array', $this->json_loader->output());
         $this->assertEquals($expected, $this->json_loader->output());
     }

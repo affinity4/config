@@ -24,16 +24,14 @@ interface LoaderInterface
      * and run the input method to convert it to an array.
      *
      * @param $file string Path of file to convert to PHP array
-     * @return void
      */
     public function __construct($file);
-    
+
     /**
      * @param $content string The raw file contents
-     * @return void
      */
     public function input($content);
-    
+
     /**
      * @return array A php array created from the input
      */

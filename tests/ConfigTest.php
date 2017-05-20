@@ -17,19 +17,19 @@ use PHPUnit\Framework\TestCase;
 class ConfigTest extends TestCase
 {
     private $file;
-    
+
     private $config;
-    
+
     private $yaml_loader;
-    
+
     public function setUp()
     {
         $this->file = __DIR__ . '/files/config.yml';
         $this->yaml_loader = new Yaml($this->file);
-        
+
         $this->config = new Config($this->yaml_loader);
     }
-    
+
     public function testGet()
     {
         $this->assertInternalType('array', $this->config->get());
