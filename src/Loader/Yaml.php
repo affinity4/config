@@ -55,6 +55,8 @@ class Yaml implements LoaderInterface
      * @since  1.0.0
      *
      * @param $file_content string
+     *
+     * @return void
      */
     public function input($file_content)
     {

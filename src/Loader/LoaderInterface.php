@@ -43,6 +43,8 @@ interface LoaderInterface
      * @since  1.0.0
      *
      * @param $content string The raw file contents
+     *
+     * @return void
      */
     public function input($content);
 
