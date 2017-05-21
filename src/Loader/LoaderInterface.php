@@ -13,6 +13,10 @@ namespace Affinity4\Config\Loader;
 /**
  * LoaderInterface Interface
  *
+ * @author Luke Watts <luke@affinity4.ie>
+ *
+ * @since 1.0.0
+ *
  * @package Affinity4\Config\Loader
  */
 interface LoaderInterface
@@ -23,16 +27,32 @@ interface LoaderInterface
      * Use this to convert you get a file
      * and run the input method to convert it to an array.
      *
+     * @author Luke Watts <luke@affinity4.ie>
+     *
+     * @since  1.0.0
+     *
      * @param $file string Path of file to convert to PHP array
      */
     public function __construct($file);
 
     /**
+     * Converts input to array to be retrieved using output
+     *
+     * @author Luke Watts <luke@affinity4.ie>
+     *
+     * @since  1.0.0
+     *
      * @param $content string The raw file contents
      */
     public function input($content);
 
     /**
+     * Get the array output
+     *
+     * @author Luke Watts <luke@affinity4.ie>
+     *
+     * @since  1.0.0
+     *
      * @return array A php array created from the input
      */
     public function output();

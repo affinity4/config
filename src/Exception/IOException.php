@@ -10,8 +10,26 @@
  */
 namespace Affinity4\Config\Exception;
 
+/**
+ * IOException Class
+ *
+ * @author Luke Watts <luke@affinity4.ie>
+ *
+ * @since  1.0.0
+ *
+ * @package Affinity4\Config\Exception
+ */
 class IOException extends \Exception
 {
+    /**
+     * IOException Constructor
+     *
+     * @param string $message
+     *
+     * @author Luke Watts <luke@affinity4.ie>
+     *
+     * @since  1.0.0
+     */
     public function __construct($message)
     {
         parent::__construct($message);
