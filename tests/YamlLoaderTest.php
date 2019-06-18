@@ -16,7 +16,7 @@ class YamlLoaderTest extends \PHPUnit\Framework\TestCase
 {
     private $yaml_loader;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->yaml_loader = new Yaml(__DIR__ . '/files/config.yml');
     }
@@ -39,7 +39,7 @@ class YamlLoaderTest extends \PHPUnit\Framework\TestCase
             ]
         ];
 
-        $this->assertInternalType('array', $this->yaml_loader->output());
+        $this->assertIsArray($this->yaml_loader->output());
         $this->assertEquals($expected, $this->yaml_loader->output());
     }
 }

@@ -16,7 +16,7 @@ class NeonLoaderTest extends \PHPUnit\Framework\TestCase
 {
     private $neon_loader;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->neon_loader = new Neon(__DIR__ . '/files/config.neon');
     }
@@ -39,7 +39,7 @@ class NeonLoaderTest extends \PHPUnit\Framework\TestCase
             ]
         ];
 
-        $this->assertInternalType('array', $this->neon_loader->output());
+        $this->assertIsArray($this->neon_loader->output());
         $this->assertEquals($expected, $this->neon_loader->output());
     }
 }

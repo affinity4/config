@@ -24,7 +24,7 @@ or
 ```
 {
     "require": {
-        "affinity4/config": "^1.0"
+        "affinity4/config": "^2.0"
     }
 }
 ```

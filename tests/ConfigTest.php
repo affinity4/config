@@ -20,10 +20,10 @@ class ConfigTest extends TestCase
 {
     private function runTests(Config $Config)
     {
-        $this->assertInternalType('array', $Config->get());
+        $this->assertIsArray($Config->get());
         $this->assertArrayHasKey('env', $Config->get());
         $this->assertEquals('local', $Config->get('env'));
-        $this->assertInternalType('array', $Config->get('db local'));
+        $this->assertIsArray($Config->get('db local'));
         $this->assertArrayHasKey('name', $Config->get('db local'));
         $this->assertEquals('test', $Config->get('db local name'));
     }

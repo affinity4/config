@@ -17,7 +17,7 @@ class JsonLoaderTest extends TestCase
 {
     private $json_loader;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->json_loader = new Json(__DIR__ . '/files/config.json');
     }
@@ -40,7 +40,7 @@ class JsonLoaderTest extends TestCase
             ]
         ];
 
-        $this->assertInternalType('array', $this->json_loader->output());
+        $this->assertIsArray($this->json_loader->output());
         $this->assertEquals($expected, $this->json_loader->output());
     }
 }
