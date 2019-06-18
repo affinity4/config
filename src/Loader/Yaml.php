@@ -24,12 +24,12 @@ use Symfony\Component\Yaml\Yaml as SymfonyYaml;
 class Yaml implements LoaderInterface
 {
     /**
-     * @var
+     * @var string
      */
-    private $file_content;
+    private $file_contents;
 
     /**
-     * @var
+     * @var array
      */
     private $parsed_content;
 
@@ -40,11 +40,11 @@ class Yaml implements LoaderInterface
      *
      * @since  1.0.0
      *
-     * @param string $file
+     * @param string $file_path
      */
-    public function __construct($file)
+    public function __construct(string $file_path)
     {
-        $this->input(file_get_contents($file));
+        $this->input(file_get_contents($file_path));
     }
 
     /**
@@ -54,15 +54,13 @@ class Yaml implements LoaderInterface
      *
      * @since  1.0.0
      *
-     * @param $file_content string
-     *
-     * @return void
+     * @param string $file_contents
      */
-    public function input($file_content)
+    public function input(string $file_contents)
     {
-        $this->file_content = $file_content;
+        $this->file_contents = $file_contents;
 
-        $this->parsed_content = (array) SymfonyYaml::parse($this->file_content);
+        $this->parsed_content = (array) SymfonyYaml::parse($this->file_contents);
     }
 
     /**
@@ -74,7 +72,7 @@ class Yaml implements LoaderInterface
      *
      * @return array
      */
-    public function output()
+    public function output(): array
     {
         return (array) $this->parsed_content;
     }

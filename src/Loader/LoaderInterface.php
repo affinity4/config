@@ -31,9 +31,9 @@ interface LoaderInterface
      *
      * @since  1.0.0
      *
-     * @param $file string Path of file to convert to PHP array
+     * @param string $file_path Path of file to convert to PHP array
      */
-    public function __construct($file);
+    public function __construct(string $file_path);
 
     /**
      * Converts input to array to be retrieved using output
@@ -42,11 +42,9 @@ interface LoaderInterface
      *
      * @since  1.0.0
      *
-     * @param $content string The raw file contents
-     *
-     * @return void
+     * @param string $file_contents The raw file contents
      */
-    public function input($content);
+    public function input(string $file_contents);
 
     /**
      * Get the array output
@@ -57,5 +55,5 @@ interface LoaderInterface
      *
      * @return array A php array created from the input
      */
-    public function output();
+    public function output(): array;
 }

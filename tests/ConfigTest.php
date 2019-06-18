@@ -12,31 +12,46 @@ namespace Affinity4\Test;
 
 use Affinity4\Config\Config;
 use Affinity4\Config\Loader\Yaml;
+use Affinity4\Config\Loader\Json;
+use Affinity4\Config\Loader\Neon;
 use PHPUnit\Framework\TestCase;
 
 class ConfigTest extends TestCase
 {
-    private $file;
-
-    private $config;
-
-    private $yaml_loader;
-
-    public function setUp()
+    private function runTests(Config $Config)
     {
-        $this->file = __DIR__ . '/files/config.yml';
-        $this->yaml_loader = new Yaml($this->file);
-
-        $this->config = new Config($this->yaml_loader);
+        $this->assertInternalType('array', $Config->get());
+        $this->assertArrayHasKey('env', $Config->get());
+        $this->assertEquals('local', $Config->get('env'));
+        $this->assertInternalType('array', $Config->get('db local'));
+        $this->assertArrayHasKey('name', $Config->get('db local'));
+        $this->assertEquals('test', $Config->get('db local name'));
     }
 
-    public function testGet()
+    public function testConfigWithYamlLoader()
     {
-        $this->assertInternalType('array', $this->config->get());
-        $this->assertArrayHasKey('env', $this->config->get());
-        $this->assertEquals('local', $this->config->get('env'));
-        $this->assertInternalType('array', $this->config->get('db local'));
-        $this->assertArrayHasKey('name', $this->config->get('db local'));
-        $this->assertEquals('test', $this->config->get('db local name'));
+        $file = __DIR__ . '/files/config.yml';
+        $YamlLoader = new Yaml($file);
+        $Config = new Config($YamlLoader);
+
+        $this->runTests($Config);
+    }
+
+    public function testConfigWithJsonLoader()
+    {
+        $file       = __DIR__ . '/files/config.json';
+        $JsonLoader = new Json($file);
+        $Config     = new Config($JsonLoader);
+
+        $this->runTests($Config);
+    }
+
+    public function testConfigWithNeonLoader()
+    {
+        $file       = __DIR__ . '/files/config.neon';
+        $NeonLoader = new Neon($file);
+        $Config     = new Config($NeonLoader);
+
+        $this->runTests($Config);
     }
 }

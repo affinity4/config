@@ -2,7 +2,7 @@
 /**
  * This file is part of Affinity4/Config.
  *
- * (c) 2017 Luke Watts <luke@affinity4.ie>
+ * (c) 2019 Luke Watts <luke@affinity4.ie>
  *
  * This software is licensed under the MIT license. For the
  * full copyright and license information, please view the
@@ -10,16 +10,18 @@
  */
 namespace Affinity4\Config\Loader;
 
+use Nette\Neon\Neon as NetteNeon;
+
 /**
- * Json Class
+ * Neon Loader
  *
- * @author Luke Watts <luke@affinity4.ie>
+ * @author  Luke Watts <luke@affinity4.ie>
  *
- * @since  1.1.0
+ * @since   1.2.0
  *
  * @package Affinity4\Config\Loader
  */
-class Json implements LoaderInterface
+class Neon implements LoaderInterface
 {
     /**
      * @var string
@@ -32,25 +34,25 @@ class Json implements LoaderInterface
     private $parsed_content;
 
     /**
-     * Json Constructor
+     * Neon Constructor
      *
      * @author Luke Watts <luke@affinity4.ie>
      *
-     * @since  1.1.0
+     * @since  1.2.0
      *
      * @param string $file_path
      */
-    public function __construct($file_path)
+    public function __construct(string $file_path)
     {
-        $this->input(file_get_contents($file_path));
+        $this->input(\file_get_contents($file_path));
     }
 
     /**
-     * Get raw JSON content and convert to array using json_decode
+     * Get raw Neon content and convert to array using Nette\Neon\Neon
      *
      * @author Luke Watts <luke@affinity4.ie>
      *
-     * @since  1.1.0
+     * @since  1.2.0
      *
      * @param string $file_contents
      */
@@ -58,15 +60,15 @@ class Json implements LoaderInterface
     {
         $this->file_contents = $file_contents;
 
-        $this->parsed_content = json_decode($this->file_contents, true);
+        $this->parsed_content = (array) NetteNeon::decode($this->file_contents);
     }
 
     /**
-     * Return php array of parsed JSON content
+     * Return php array of parsed Neon content
      *
      * @author Luke Watts <luke@affinity4.ie>
      *
-     * @since  1.1.0
+     * @since  1.2.0
      *
      * @return array
      */
