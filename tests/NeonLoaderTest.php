@@ -12,6 +12,9 @@ namespace Affinity4\Test;
 
 use Affinity4\Config\Loader\Neon;
 
+/**
+ * @covers \Affinity4\Config\Loader\Neon
+ */
 class NeonLoaderTest extends \PHPUnit\Framework\TestCase
 {
     private $neon_loader;

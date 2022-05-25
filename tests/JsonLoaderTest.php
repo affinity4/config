@@ -13,6 +13,9 @@ namespace Affinity4\Test;
 use Affinity4\Config\Loader\Json;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * @covers \Affinity4\Config\Loader\Json
+ */
 class JsonLoaderTest extends TestCase
 {
     private $json_loader;

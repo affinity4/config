@@ -16,6 +16,12 @@ use Affinity4\Config\Loader\Json;
 use Affinity4\Config\Loader\Neon;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * @covers \Affinity4\Config\Config
+ * @uses \Affinity4\Config\Loader\Yaml
+ * @uses \Affinity4\Config\Loader\Json
+ * @uses \Affinity4\Config\Loader\Neon
+ */
 class ConfigTest extends TestCase
 {
     private function runTests(Config $Config)
@@ -28,6 +34,11 @@ class ConfigTest extends TestCase
         $this->assertEquals('test', $Config->get('db local name'));
     }
 
+    /**
+     * @uses \Affinity4\Config\Loader\Yaml
+     *
+     * @return void
+     */
     public function testConfigWithYamlLoader()
     {
         $file = __DIR__ . '/files/config.yml';
@@ -37,6 +48,11 @@ class ConfigTest extends TestCase
         $this->runTests($Config);
     }
 
+    /**
+     * @uses \Affinity4\Config\Loader\Json
+     *
+     * @return void
+     */
     public function testConfigWithJsonLoader()
     {
         $file       = __DIR__ . '/files/config.json';
@@ -46,6 +62,11 @@ class ConfigTest extends TestCase
         $this->runTests($Config);
     }
 
+    /**
+     * @uses \Affinity4\Config\Loader\Neon
+     *
+     * @return void
+     */
     public function testConfigWithNeonLoader()
     {
         $file       = __DIR__ . '/files/config.neon';

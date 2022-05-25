@@ -1,11 +1,5 @@
 # Config
 
-[![Build Status](https://travis-ci.org/affinity4/config.svg?branch=master)](https://travis-ci.org/affinity4/config) 
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/affinity4/config/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/affinity4/config/?branch=master)
-[![Code Coverage](https://scrutinizer-ci.com/g/affinity4/config/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/affinity4/config/?branch=master)
-
-[![SensioLabsInsight](https://insight.sensiolabs.com/projects/eeaec411-8edf-44f8-ad33-00c25384bc52/big.png)](https://insight.sensiolabs.com/projects/eeaec411-8edf-44f8-ad33-00c25384bc52)
-
 Load config files from various formats to PHP arrays and easily retrieve deeply nested items
 
 ## Features
@@ -13,27 +7,20 @@ Load config files from various formats to PHP arrays and easily retrieve deeply 
 - Specify any Loader which implements Affinity4\Config\LoaderInterface
 - Get entire array of values
 - Get specific value using simple, readable pattern
- 
+
 ## Installation
+
 Affinity4/Config is available via composer:
 
-`composer require affinity4/config`
-
-or
-
-```
-{
-    "require": {
-        "affinity4/config": "^2.0"
-    }
-}
+```bash
+composer require affinity4/config
 ```
 
 ## Usage
 
 Given the contents of `config.yml` are:
 
-```
+```yaml
 env: local
 db:
     local:
@@ -45,7 +32,7 @@ db:
 
 Using the Affinity4 Yaml Loader:
 
-```
+```php
 $loader = new Affinity4\Config\Loader\Yaml(__DIR__ . '/config.yml');
 
 $config = new Affinity4\Config\Config($loader);
@@ -53,13 +40,13 @@ $config = new Affinity4\Config\Config($loader);
 
 Get complete array using the `get()` method without passing a key:
 
-```
+```php
 $config->get();
 ```
 
 Would return:
 
-```
+```php
 [
     'env' => 'local',
     'db' => [
@@ -75,19 +62,29 @@ Would return:
 
 Or get a specific value by specifying a the map to the nested key:
 
-```
+```php
 $config->get('db local name'); // test
 ```
+
+## Loaders
+
+Affinity4/Config comes with these Loaders out of the box:
+
+- Json
+- Yaml
+- Neon
+- PHP
 
 ## Tests
 
 Run tests:
 
-```
+```bash
 vendor/bin/phpunit
 ```
 
 ## Licence
+
 (c) 2017 Luke Watts (Affinity4.ie)
 
 This software is licensed under the MIT license. For the

@@ -12,6 +12,9 @@ namespace Affinity4\Test;
 
 use Affinity4\Config\Loader\Yaml;
 
+/**
+ * @covers \Affinity4\Config\Loader\Neon
+ */
 class YamlLoaderTest extends \PHPUnit\Framework\TestCase
 {
     private $yaml_loader;
